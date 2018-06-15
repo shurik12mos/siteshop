@@ -1,0 +1,91 @@
+body {direction: rtl; }
+.owl-carousel .owl-item {float: right !important; }
+.contact-item > li > i {margin: 0; margin-left: 10px; }
+.registration-sec form > label {text-align: right; margin-right: 0; }
+.account-popup {margin-left: 0; float: left; margin-left: 50%; }
+.service > i {float: right; }
+.service > h3::before {left: auto; right: 0; }
+.step-info > span::before {left: auto; right: 0; }
+.flat-btn {float: right; }
+.logo {float: right; }
+.logo > a {padding-left: 0; padding-right: 55px; }
+.logo > a i {left: auto; right: 0; }
+.logo span {float: right; }
+.popup-client {float: left; margin-left: 0; }
+.menu nav {margin-right: 65px; }
+.inner-content > ul {float: right; width: auto; }
+.inner-content li:last-child {padding: 0; }
+.mini-gallery > li {float: right; }
+.owl-carousel {direction: ltr; }
+.links_widget li > a i {margin-left: 10px; margin-right: 0; }
+.about_widget > span i {float: right; }
+.about_widget .logo a {float: right; }
+.social-btns > li {float: right; }
+.subscribe_widget form label input {padding: 0 20px 0 67px; }
+.billing-sec .field > label span {margin-left: 0; margin-right: 5px; }
+.heading2 > h3 {float: right; margin-right: 20px; }
+.social_widget > a {float: right; margin-left: 6px; margin-right: 0; }
+.search_widget > form button {left: 7px; right: auto; }
+.post-detail a.post-cat {float: right; }
+.post-detail > span i {margin-left: 6px; margin-right: 0; }
+.forcefullwidth_wrapper_tp_banner {direction: ltr; }
+.mini-service-info > ul > li i {float: right; margin-left: 20px; margin-right: 0; }
+.mini-portfolio .portfolio-info > ul > li {float: right; }
+.menu-item-has-children > ul > li > a span.badge {float: left; margin-left: 0; margin-right: 4px; }
+.branch-detail > a {float: right; }
+.branch-detail > h3 {text-align: right; }
+.branch-detail {padding-left: 20px; padding-right: 45px; }
+.branch > ul > li {padding-left: 20px; padding-right: 0; }
+.branch > ul > li > span > i {margin-left: 9px; margin-right: 0; }
+.cart-thumb {float: right; }
+.price-cart-item {float: right; }
+.cart-item-quantity > i {margin-left: 10px; margin-right: 0; }
+.contact-lists-sec li > i {float: right; margin-left: 20px; margin-right: 0; }
+.contact-form > form .row > div > input[type="text"], .contact-form > form .row > div > textarea {padding: 18px 30px 18px 80px; }
+.contact-infos > ul > li > span > i {margin-left: 9px; margin-right: 0; }
+.error-not-found {text-align: right; }
+.error-not-found > ul > li {float: right; margin-left: 30px; margin-right: 0; }
+.event-detail h5 i {margin-left: 10px; margin-right: 0; }
+.event-countdown > li {float: right; margin-left: 20px; margin-right: 0; }
+.event-single > .event-box .event-detail {float: right; } 
+.event-single .event-countdown {float: left; }
+.post-tags > span {float: right; margin-left: 10px; margin-right: 0; }
+.post2-thumb {float: right; margin-left: 30px; margin-right: 0; }
+.square-infos > a {float: right; }
+.mini-service-info::before {left: auto; right: 80px; }
+.mini-service-info > ul > li {padding-left: 30px; padding-right: 0; }
+.texty-style > h3::before {left: auto; right: 0; }
+.ceo-message > a.flat-btn {float: right; margin-right: 0; }
+.product-box {text-align: right; }
+.product-box span.price {float: right; }
+.features > li {padding-left: 0; padding-right: 60px; }
+.features > li i {left: auto; right: 0; }
+.thanks-message span {float: right; }
+.thanks-message h5 {float: right; padding-left: 0; padding-right: 30px; }
+.thanks-message > p {float: right; padding: 0 20px 0 0; }
+.flat-btn > i {margin-left: 13px; margin-right: 0; }
+.menu-toggle {float: left; margin-left: 10px; }
+
+@media (max-width: 1200px) {
+.popup-client {margin: 0; }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
