@@ -483,7 +483,7 @@ iframe{
 .menu nav > ul > li > a {
     color: #ffffff;
     float: left;
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 600;
     letter-spacing: 0.3px;
 
@@ -4612,8 +4612,6 @@ body.fixed-bg-boxed {
 .single-product-tabs > table {
     margin: 30px -15px 0;
 }
-
-
 .single-product-infos {
     float: left;
     width: 100%;
@@ -4905,6 +4903,7 @@ footer.light-footer .bottom-line a {
 .menu-item-has-children > ul > li > a span.badge {
     float: right;
     margin: 4px 0;
+    color: #a33;
 }
 #contact #message > div {
     background: #333333 none repeat scroll 0 0;
@@ -5139,3 +5138,15 @@ footer.light-footer .bottom-line a {
     border-radius: 50%;
 }
 
+
+
+.tab_title td {
+    background: #fafafa;
+    padding: 0px 10px;
+}
+.first_col {
+    width: 60%;
+    padding-right: 3px;
+    padding-top: 3px;
+    padding-bottom: 8px;
+}
