@@ -140,7 +140,27 @@
 					<div class="col-md-12">
 						<div class="billing-sec">
 							<div class="row">
-								<div class="col-md-12">
+
+								<div class="account-create">
+									<div class="col-md-12">
+										<h4>Your Order</h4>
+										<p>Notes about your order, e.g. special notes for delivery.</p>
+									</div>
+									<div class="col-md-12">
+										<div class="cart-total-box">
+											<h2 class="cart-head-title">CART TOTAL</h2>
+											<ul class="cart-items-list">
+												<li class="cart-item"><h3>Shoes × 1</h3> <span>£50.00</span></li>
+												<li class="cart-first-summary"><h3>Cart Subtotal</h3> <span>$335</span></li>
+												<li class="cart-delivery-price"><h3>Shipping</h3> <span>Free Shipping</span></li>
+												<li class="cart-total"><h3>Order Total</h3> <span>$335</span></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+
+								<!--<div class="col-md-12">
 									<div class="field">
 										<label>Country</label>
 										<select>
@@ -152,39 +172,39 @@
 											<option>Pakistan</option>
 										</select>
 									</div>
-								</div>
+								</div>-->
 								<div class="col-md-6">
 									<div class="field">
 										<label>Name<span>*</span></label>
-										<input type="text" placeholder="Full Name" />
+										<input type="text" name="firstName" placeholder="First Name" />
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="field">
 										<label>Last Name<span>*</span></label>
-										<input type="text" placeholder="Last Name" />
+										<input type="text" name="lastName" placeholder="Last Name" />
 									</div>
 								</div>
-								<div class="col-md-12">
+								<!--<div class="col-md-12">
 									<div class="field">
 										<label>Company Name<span>*</span></label>
 										<input type="text" placeholder="Your Company Name" />
 									</div>
-								</div>
+								</div>-->
 								<div class="col-md-12">
 									<div class="field">
 										<label>Company Address<span>*</span></label>
-										<input type="text" placeholder="Address Line 1" />
-										<input type="text" placeholder="Address Line 2" />
-									</div>
-								</div>
-								<div class="col-md-12">
-									<div class="field">
-										<label>Town / City<span>*</span></label>
-										<input type="text" placeholder="Add your Town / City" />
+										<input type="text" name="addressLine1" placeholder="Address Line 1" />
+										<input type="text" name="addressLine2" placeholder="Address Line 2" />
 									</div>
 								</div>
 								<div class="col-md-6">
+									<div class="field">
+										<label>Town / City<span>*</span></label>
+										<input type="text" name="city" placeholder="Add your Town / City" />
+									</div>
+								</div>
+								<!--<div class="col-md-6">
 									<div class="field">
 										<label>Stats<span>*</span></label>
 										<select>
@@ -195,26 +215,30 @@
 											<option>Your Stats1</option>
 										</select>
 									</div>
-								</div>
+								</div>-->
 								<div class="col-md-6">
 									<div class="field">
 										<label>Zip / Postal Code<span>*</span></label>
-										<input type="text" placeholder="Zip / Postal" />
+										<input type="text" name="zip" placeholder="Zip / Postal" />
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="field">
 										<label>Email Address<span>*</span></label>
-										<input type="text" placeholder="Email Address" />
+										<input type="text" name="email" placeholder="Email Address" />
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="field">
 										<label>Phone Number<span>*</span></label>
-										<input type="text" placeholder="Phone #" />
+										<input type="text" name="phone" placeholder="Phone #" />
 									</div>
 								</div>
-								<div class="account-create">
+								<div class="col-md-12">
+									<a href="#" title="" class="flat-btn submit-cart">SUBMIT</a>
+								</div>
+
+								<!--<div class="account-create">
 									<div class="col-md-12">
 										<h4>Create an Account</h4>
 										<p>Create an account by entering the information below. If you are a returning customer please login at the top of the page.</p>
@@ -245,27 +269,8 @@
 											<textarea placeholder="Add Shipping address"></textarea>
 										</div>
 									</div>
-								</div>
-								<div class="account-create">
-									<div class="col-md-12">
-										<h4>Your Order</h4>
-										<p>Notes about your order, e.g. special notes for delivery.</p>
-									</div>
-									<div class="col-md-12">
-										<div class="cart-total-box">
-											<h2 class="cart-head-title">CART TOTAL</h2>
-											<ul>
-												<li><h3>Shoes × 1</h3> <span>£50.00</span></li>
-												<li><h3>Cart Subtotal</h3> <span>$335</span></li>
-												<li><h3>Shipping</h3> <span>Free Shipping</span></li>
-												<li><h3>Order Total</h3> <span>$335</span></li>
-											</ul>
-										</div>
-									</div>
-									<div class="col-md-12">
-										<a href="#" title="" class="flat-btn">SUBMIT</a>
-									</div>
-								</div>
+								</div>-->
+
 							</div>
 						</div>
 					</div>
