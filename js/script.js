@@ -33,15 +33,15 @@ jQuery(document).ready(function () {
             page: 'bas_101.html',
             price: 310
         },
-        vpa_320: {
-            name: 'Контролер VPA-320',
-            page: 'vpa_320.html',
+        vpa_123: {
+            name: 'Контролер VPA-123',
+            page: 'vpa_123.html',
             price: 1940
         },
         uhr_101: {
             name: 'Регулятор теплої підлоги UHR-101',
             page: 'uhr_101.html',
-            price: 1940
+            price: 1220
         }
     }
 
@@ -249,8 +249,10 @@ jQuery(document).ready(function () {
 
             //cart-items-list
             htmlItems += "<li class='cart-item' data-itemid='" + key + "'>";
+            htmlItems += "<div class='minus'><i class='fa fa-trash-o'></i></div>";
+            htmlItems += "<h3>" + product.item.name + "</h3>";
             htmlItems += "<div class='minus'>-</div>";
-            htmlItems += "<h3>" + product.item.name + " × " + product.number + "</h3>";
+            htmlItems += "<h3>"  + product.number + "</h3>";
             htmlItems += "<div class='plus'>+</div>";
             htmlItems += " <span>" + product.item.price * product.number + "</span></li>";
         }
@@ -263,7 +265,7 @@ jQuery(document).ready(function () {
     }
 
     function calculateCart(total) {
-        var delivery = 80;
+        var delivery = 0;
         $('.cart-first-summary span').text(total);
         $('.cart-delivery-price span').text(delivery);
         $('.cart-total span').text(delivery + total);
@@ -316,10 +318,10 @@ jQuery(document).ready(function () {
             return;
         }
 
-        if (!lastName) {
-            addNotification("Заповніть Ваше прізвище, будь ласка");
-            return;
-        }
+        //if (!lastName) {
+        //    addNotification("Заповніть Ваше прізвище, будь ласка");
+        //    return;
+        //}
 
         if (!city) {
             addNotification("Заповніть Ваше місто, будь ласка");
@@ -329,15 +331,18 @@ jQuery(document).ready(function () {
             addNotification("Введіть коректний телефон, будь ласка");
             return;
         }
-        if (!addressLine1 || !addressLine2) {
-            addNotification("Заповніть Вашу адресу, будь ласка");
-            return;
+        //if (!addressLine1 || !addressLine2) {
+        //    addNotification("Заповніть Вашу адресу, будь ласка");
+        //    return;
+        //}
+        
+        if (email){
+            if (!email.match(/^[\d\w+.]*@\w*\.\w*$/)) {
+                addNotification("Введіть коректний email, будь ласка");
+                return;
+            } 
         }
-
-        if (!email || !email.match(/^[\d\w+.]*@\w*\.\w*$/)) {
-            addNotification("Введіть коректний email, будь ласка");
-            return;
-        }
+        
 
         $.post('order.php',
             {

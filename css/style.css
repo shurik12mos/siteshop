@@ -1131,7 +1131,7 @@ aside .widget:first-child {
     width: 100%;
 }
 .heading1 > h2 {
-    color: #ffffff;
+    color: #2e2e2e;
     float: left;
     font-family: Ubuntu;
     font-size: 21px;
@@ -1143,7 +1143,7 @@ aside .widget:first-child {
     width: 100%;
 }
 .heading1 > h2 span{
-    color: #d0d0d0;
+    color: #2e2e2e;
 }
 .heading1 > h2::before {
     bottom: 0;
@@ -1170,7 +1170,7 @@ aside .widget:first-child {
     padding-left: 20px;
     padding-right: 20px;
     position: relative;
-    text-transform: uppercase;
+
     width: auto;
 }
 .heading2 h3::after {
@@ -1178,9 +1178,9 @@ aside .widget:first-child {
     content: "";
     height: 100%;
     position: absolute;
-    right: -20px;
+    right: 0px;
     top: 0;
-    width: 20px;
+    width: 0px;
 }
 .heading2 h3::before {
     content: "";
@@ -1229,6 +1229,15 @@ aside .widget:first-child {
     float: left;
     font-family: Ubuntu;
     font-size: 38px;
+    font-weight: bold;
+    margin: -6px 0 10px;
+    width: 100%;
+}
+.heading4 > h3 {
+    color: #1a1a1a;
+    float: left;
+    font-family: Ubuntu;
+    font-size: 26px;
     font-weight: bold;
     margin: -6px 0 10px;
     width: 100%;
@@ -4280,7 +4289,7 @@ body.fixed-bg-boxed {
 }
 .billing-sec .field > input,
 .billing-sec .field > textarea {
-    background: #fafafa none repeat scroll 0 0;
+    background: #f8f8f8 none repeat scroll 0 0;
     border: medium none;
     float: left;
     font-family: Ubuntu;
@@ -4320,7 +4329,7 @@ body.fixed-bg-boxed {
     margin-bottom: 40px;
 }
 .cart-head-title {
-    background: #444444 none repeat scroll 0 0;
+    background: #555555 none repeat scroll 0 0;
     color: #ffffff;
     float: left;
     font-family: Ubuntu;
@@ -4357,8 +4366,8 @@ body.fixed-bg-boxed {
     color: #575757;
     float: left;
     font-family: Ubuntu;
-    font-size: 16px;
-    font-weight: bold;
+    font-size: 15px;
+    
     margin: 4px 0;
 }
 
@@ -4398,6 +4407,7 @@ body.fixed-bg-boxed {
 
 .cart-total-box li span {
     float: right;
+    font-size: 16px;
 }
 .account-create a.flat-btn {
     float: right;
@@ -5210,7 +5220,7 @@ footer.light-footer .bottom-line a {
 
 
 .tab_title td {
-    background: #fafafa;
+    background: #f8f8f8;
     padding: 0px 10px;
 }
 .first_col {
