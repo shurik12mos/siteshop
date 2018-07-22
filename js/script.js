@@ -390,7 +390,16 @@ jQuery(document).ready(function () {
                     email: email
                 }
             ).done(function(data) {
-                if (data.success) {
+                let response
+                try {
+                    response = JSON.parse(data);
+                }catch(e) {
+                    addNotification("Сталася помилка. Спробуйте ще раз");
+                    console.error(data);
+                    return;
+                }
+
+                if (response.success) {
                     addNotification("Дякуємо за замовлення. Ваше замовлення в обробці.", true);
                     cartProducts = {};
                     cartCount = 0;
