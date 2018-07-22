@@ -33,18 +33,18 @@ if ($error) {
     return;
 }
 
-$mail_body = "Order \r\n";
-$mail_body = "first_name: " . $first_name;
+$mail_body = "Замовлення \r\n";
+$mail_body .= "first_name: " . $first_name;
 
-$mail_body = "city: " . $city;
+$mail_body .= "city: " . $city;
 
-$mail_body = "phone: " . $phone;
+$mail_body .= "phone: " . $phone;
 
 if ($email) {
-    $mail_body = "email: " . $email;
+    $mail_body .= "email: " . $email;
 }
 
-$mail_body = "order/r/n " . $order;
+$mail_body .= "\r\n " . $order;
 
 $headers = 'From: webmaster@example.com' . "\r\n" .
     'X-Mailer: PHP/' . phpversion();

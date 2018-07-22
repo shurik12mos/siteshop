@@ -174,7 +174,7 @@ jQuery(document).ready(function () {
         itemAddedToCart();
     });
 
-    function addNotification(notification) {
+    function addNotification(notification, success) {
         console.log(notification);
 
         var notBlock = $('.notifications');
@@ -182,7 +182,13 @@ jQuery(document).ready(function () {
         if (!notBlock || !notBlock.length) {
             $('body').append("<div class='notifications'></div>");
         }
-        var html = "<div>" + notification + "</div>"
+        var html;
+
+        if (success) {
+            html = "<div class='success'>" + notification + "</div>"
+        }else {
+            html = "<div class='error'>" + notification + "</div>"
+        }
 
         $('.notifications').append(html);
         setTimeout(function(){
@@ -380,7 +386,7 @@ jQuery(document).ready(function () {
                 },
                 function(data){
                     if (data.success) {
-                        addNotification("Ваше замовлення в обробці.")
+                        addNotification("Дякуємо за замовлення. Ваше замовлення в обробці.", true);
                         cartProducts = {};
                         cartCount = 0;
                         localStorage.removeItem('cart');
