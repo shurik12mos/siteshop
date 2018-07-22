@@ -353,10 +353,15 @@ jQuery(document).ready(function () {
         //}
         
         if (email){
-            if (!email.match(/^[\d\w+.]*@\w*\.\w*$/)) {
+            if (!email.match(/^.+@.+\..+$/)) {
                 addNotification("Введіть коректний email, будь ласка");
                 return;
             } 
+        }
+
+        if (!order || !Object.keys(order).length) {
+            addNotification("Виберіть товари для покупки");
+            return;
         }
 
         var orderString = '';
@@ -383,31 +388,29 @@ jQuery(document).ready(function () {
                     city: city,
                     phone: phone,
                     email: email
-                },
-                function(data){
-                    if (data.success) {
-                        addNotification("Дякуємо за замовлення. Ваше замовлення в обробці.", true);
-                        cartProducts = {};
-                        cartCount = 0;
-                        localStorage.removeItem('cart');
-                        updateCartHtml();
-                        updateCartCount();
-                        $('input').val('');
-                        return;
-                    }
-
-                    console.error(data);
-                    addNotification("Сталася помилкаю Спробуйте ще раз");
-
-                },
-                function(err) {
-                    console.error(err);
-                    addNotification("Сталася помилкаю Спробуйте ще раз");
                 }
-            )
+            ).done(function(data) {
+                if (data.success) {
+                    addNotification("Дякуємо за замовлення. Ваше замовлення в обробці.", true);
+                    cartProducts = {};
+                    cartCount = 0;
+                    localStorage.removeItem('cart');
+                    updateCartHtml();
+                    updateCartCount();
+                    $('input').val('');
+                    return;
+                }
+
+                console.error(data);
+                addNotification("Сталася помилка. Спробуйте ще раз");
+            })
+                .fail(function(err) {
+                    console.error(err);
+                    addNotification("Сталася помилка. Спробуйте ще раз");
+                })
         }catch(err) {
             console.error(err);
-            addNotification("Сталася помилкаю Спробуйте ще раз");
+            addNotification("Сталася помилка. Спробуйте ще раз");
         }
 
     })

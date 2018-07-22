@@ -34,17 +34,17 @@ if ($error) {
 }
 
 $mail_body = "Замовлення \r\n";
-$mail_body .= "first_name: " . $first_name;
+$mail_body .= "first_name: " . $first_name . "\r\n";
 
-$mail_body .= "city: " . $city;
+$mail_body .= "city: " . $city  . "\r\n";
 
-$mail_body .= "phone: " . $phone;
+$mail_body .= "phone: " . $phone  . "\r\n";
 
 if ($email) {
-    $mail_body .= "email: " . $email;
+    $mail_body .= "email: " . $email  . "\r\n";
 }
 
-$mail_body .= "\r\n " . $order;
+$mail_body .= "\r\n \r\n " . $order;
 
 $headers = 'From: webmaster@example.com' . "\r\n" .
     'X-Mailer: PHP/' . phpversion();
