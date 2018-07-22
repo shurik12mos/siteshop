@@ -14,13 +14,13 @@ $error = false;
 
 if (!$first_name) {
     $data["sucess"] = false;
-    $data["error"] = "First name is required"
+    $data["error"] = "First name is required";
     $error = true;
 }
 
 if (!$last_name) {
     $data["sucess"] = false;
-    $data["error"] = "Last name is required"
+    $data["error"] = "Last name is required";
     $error = true;
 }
 

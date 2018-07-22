@@ -233,6 +233,7 @@ jQuery(document).ready(function () {
         if (!cart) return;
 
         if (!Object.keys(cartProducts).length) {
+            $('.cart-total-box .cart-item').remove();
             calculateCart(0);
             return;
         }
@@ -249,7 +250,7 @@ jQuery(document).ready(function () {
 
             //cart-items-list
             htmlItems += "<li class='cart-item' data-itemid='" + key + "'>";
-            htmlItems += "<div class='minus'><i class='fa fa-trash-o'></i></div>";
+            htmlItems += "<div class='trash'><i class='fa fa-trash-o'></i></div>";
             htmlItems += "<h3>" + product.item.name + "</h3>";
             htmlItems += "<div class='minus'>-</div>";
             htmlItems += "<h3>"  + product.number + "</h3>";
@@ -273,8 +274,13 @@ jQuery(document).ready(function () {
 
     $(document).on('click', '.cart-item .minus', function (e) {
         var id = $(e.target).closest('.cart-item').data('itemid');
+
+        if (cartProducts[id].number < 2){
+            return;
+        }
+
         updateCart(id, false);
-    })
+    });
 
     $(document).on('click', '.cart-item .plus', function (e) {
         var id = $(e.target).closest('.cart-item').data('itemid');
@@ -293,9 +299,6 @@ jQuery(document).ready(function () {
         } else {
             cartProducts[id].number--;
             itemRemovedFromCart();
-            if (cartProducts[id].number < 1) {
-                delete cartProducts[id];
-            }
         }
 
         updateCartHtml();
@@ -303,14 +306,21 @@ jQuery(document).ready(function () {
 
     }
 
+    $(document).on('click', '.cart-item .trash', function (e) {
+        var id = $(e.target).closest('.cart-item').data('itemid');
+
+
+        delete cartProducts[id];
+        itemRemovedFromCart();
+        updateCartHtml();
+        localStorage.setItem('cart', JSON.stringify(cartProducts));
+    });
+
     $('.submit-cart').on('click', function () {
         var firstName = $('input[name="firstName"]').val();
-        var lastName = $('input[name="lastName"]').val();
         var email = $('input[name="email"]').val();
         var city = $('input[name="city"]').val();
         var phone = $('input[name="phone"]').val();
-        var addressLine1 = $('input[name="addressLine1"]').val();
-        var addressLine2 = $('input[name="addressLine2"]').val();
         var order = cartProducts;
 
         if (!firstName) {
@@ -348,11 +358,9 @@ jQuery(document).ready(function () {
             {
                 order: order,
                 first_name: firstName,
-                last_name: lastName,
                 city: city,
                 phone: phone,
-                address_line1: addressLine1,
-                address_line2: addressLine2
+                email: email
             },
             function(data){
                 if (data.success) {
@@ -364,13 +372,15 @@ jQuery(document).ready(function () {
                     return;
                 }
 
+                console.error(data);
+                addNotification("Сталася помилкаю Спробуйте ще раз");
 
+            },
+            function(err) {
+                console.error(err);
+                addNotification("Сталася помилкаю Спробуйте ще раз");
             }
-        ).fail(function() {
-            addNotification("Сталася помилкаю Спробуйте ще раз");
-        })
-
-
+        )
     })
 
 });
