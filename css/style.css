@@ -4378,10 +4378,10 @@ body.fixed-bg-boxed {
     font-weight: bold;
     margin: 0px 5px;
     margin-right: 15px;
-
+    border: 1px solid #ccc;
+    border-radius: 7px;
     cursor: pointer;
     padding: 0px 8px;
-    color: #ac2925;
     opacity: 0.6;
     transition: all 0.5s;
 }

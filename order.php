@@ -18,33 +18,15 @@ if (!$first_name) {
     $error = true;
 }
 
-if (!$last_name) {
-    $data["sucess"] = false;
-    $data["error"] = "Last name is required";
-    $error = true;
-}
-
 if (!$city) {
     $data["sucess"] = false;
-    $data["error"] = "City is required"
+    $data["error"] = "City is required";
     $error = true;
 }
 
 if (!$phone) {
     $data["sucess"] = false;
-    $data["error"] = "Phone is required"
-    $error = true;
-}
-
-if (!$email) {
-    $data["sucess"] = false;
-    $data["error"] = "Email is required"
-    $error = true;
-}
-
-if (!$address_line1 || !$address_line2) {
-    $data["sucess"] = false;
-    $data["error"] = "Address is required"
+    $data["error"] = "Phone is required";
     $error = true;
 }
 
@@ -64,18 +46,15 @@ $mail_body = "$phone: " . $phone;
 
 $mail_body = "$email: " . $email;
 
-$mail_body = "$address_line1: " . $address_line1;
-
-$mail_body = "$address_line2: " . $address_line2;
-
 $mail_body = "$order: " . $order;
 
-$headers = 'From: webmaster@example.com' . "\r\n"
+$headers = 'From: webmaster@example.com' . "\r\n" .
     'X-Mailer: PHP/' . phpversion();
 
+mail("tripol.zp@gmail.com","Order",$mail_body, $headers);
 mail("aa.yaroshenko@gmail.com","Order",$mail_body, $headers);
 
-header('Content-Type: application/json');
+//$header('Content-Type: application/json');
 $data["sucess"] = true;
 echo json_encode($data);
 ?>
