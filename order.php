@@ -1,12 +1,9 @@
 <?php
-
 $first_name = $_POST["first_name"];
 $last_name = $_POST["last_name"];
 $city = $_POST["city"];
 $phone = $_POST["phone"];
 $email = $_POST["email"];
-$address_line1 = $_POST["address_line1"];
-$address_line2 = $_POST["address_line2"];
 $order = $_POST["order"];
 
 $data = [];
@@ -36,17 +33,18 @@ if ($error) {
     return;
 }
 
-$mail_body = "Order\r\n";
-$mail_body = "$first_name: " . $first_name;
-$mail_body = "$last_name: " . $last_name;
+$mail_body = "Order \r\n";
+$mail_body = "first_name: " . $first_name;
 
-$mail_body = "$city: " . $city;
+$mail_body = "city: " . $city;
 
-$mail_body = "$phone: " . $phone;
+$mail_body = "phone: " . $phone;
 
-$mail_body = "$email: " . $email;
+if ($email) {
+    $mail_body = "email: " . $email;
+}
 
-$mail_body = "$order: " . $order;
+$mail_body = "order/r/n " . $order;
 
 $headers = 'From: webmaster@example.com' . "\r\n" .
     'X-Mailer: PHP/' . phpversion();

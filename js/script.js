@@ -352,35 +352,58 @@ jQuery(document).ready(function () {
                 return;
             } 
         }
-        
 
-        $.post('order.php',
-            {
-                order: order,
-                first_name: firstName,
-                city: city,
-                phone: phone,
-                email: email
-            },
-            function(data){
-                if (data.success) {
-                    addNotification("Ваше замовлення в обробці.")
-                    cartProducts = {};
-                    cartCount = 0;
-                    localStorage.removeItem('cart');
-                    updateCartHtml();
-                    return;
+        var orderString = '';
+        var total = 0;
+        for (var key in order) {
+            if (!order.hasOwnProperty(key)) return;
+
+            var product = order[key];
+
+            orderString += 'Найменування ' + product.item.name + ', кількість: ' + product.number;
+            orderString += ', ціна: ' + product.item.price;
+            orderString += ', загалом: ' + product.item.price * product.number + '\r\n';
+
+            total += product.item.price * product.number;
+        }
+
+        orderString += 'Загальна сума: ' + total + 'грн' + '\r\n';
+
+        try {
+            $.post('order.php',
+                {
+                    order: orderString,
+                    first_name: firstName,
+                    city: city,
+                    phone: phone,
+                    email: email
+                },
+                function(data){
+                    if (data.success) {
+                        addNotification("Ваше замовлення в обробці.")
+                        cartProducts = {};
+                        cartCount = 0;
+                        localStorage.removeItem('cart');
+                        updateCartHtml();
+                        updateCartCount();
+                        $('input').val('');
+                        return;
+                    }
+
+                    console.error(data);
+                    addNotification("Сталася помилкаю Спробуйте ще раз");
+
+                },
+                function(err) {
+                    console.error(err);
+                    addNotification("Сталася помилкаю Спробуйте ще раз");
                 }
+            )
+        }catch(err) {
+            console.error(err);
+            addNotification("Сталася помилкаю Спробуйте ще раз");
+        }
 
-                console.error(data);
-                addNotification("Сталася помилкаю Спробуйте ще раз");
-
-            },
-            function(err) {
-                console.error(err);
-                addNotification("Сталася помилкаю Спробуйте ще раз");
-            }
-        )
     })
 
 });
